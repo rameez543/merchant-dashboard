@@ -16,7 +16,7 @@ export default {
   },
   async mounted() {
     try {
-      const resp = await this.$store.dispatch("dashboard/FETCH_TRX");
+      const resp = await this.$store.dispatch("dashboard/GET_USER_INFO");
       console.log("respp++", resp);
     } catch (err) {
       console.log("eer", err);

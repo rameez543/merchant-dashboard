@@ -11,12 +11,29 @@
           placeholder="Search"
           class="border rounded-lg p-2 mr-4"
         />
-        <div class="h-8 w-8 bg-gray-300 rounded-full"></div>
+        <div class="relative" v-show="$route.name === 'Transactions'">
+          <i
+            @click="$nuxt.$emit('show-filter', true)"
+            class="fa cursor-pointer fa-filter"
+            aria-hidden="true"
+          ></i>
+          <FilterTrx />
+        </div>
+
+        <i
+          class="fa-solid fa-sort ml-4 cursor-pointer"
+          v-show="$route.name === 'Transactions'"
+        ></i>
       </div>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+import FilterTrx from "@/components/FilterTrx";
+export default {
+  comments: {
+    FilterTrx,
+  },
+};
 </script>
